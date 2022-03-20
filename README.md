@@ -1,1 +1,1 @@
-# crowdsourced-participatory-medicine.github.io
+# Crowdsourced Participatory Medicine Framework
