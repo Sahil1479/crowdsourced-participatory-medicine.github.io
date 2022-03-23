@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Participatory Medicine- Crowdsource Project</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/cspm_logo.jpg" rel="icon">
+  <link href="assets/img/cspm_logo.jpg" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <section id="contact" class="contact">
+        <div id="contact_form" class="container">
+  
+          <div class="section-title">
+            <h2>Crowdsourced Participatory Medicine Questionnaire
+            </h2>
+          </div>
+  
+        </div>
+  
+        <div><!--
+          <iframe style="border:0; width: 100%; height: 350px;" src="" frameborder="0" allowfullscreen></iframe> -->
+        </div>
+  
+        <div class="container">
+            <div class="col-lg-12">
+                <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+                    <div class="row" style="align-items: end;">
+                        <div class="form-group col-md-6" style="margin-top: 10px; margin-bottom: 10px">
+                            <label>Email</label>
+                            <input type="email" class="form-control" name="email" id="email" placeholder="example@gmail.com" required>
+                        </div>
+                        <div class="form-group col-md-6" style="margin-top: 10px; margin-bottom: 10px">
+                            <label>Name</label>
+                            <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+                        </div>
+                    </div>
+                    <div class="row" style="align-items: end;">
+                        <div class="form-group col-md-4" style="margin-top: 10px; margin-bottom: 10px">
+                            <label>Age</label>
+                            <input type="number" class="form-control" name="age" id="age" placeholder="Your Age" required>
+                        </div>
+                        <div class="form-group col-md-4" style="margin-top: 10px; margin-bottom: 10px">
+                            <label>Mobile Number</label>
+                            <input type="tel" id="phone" class="form-control" name="phone" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}">
+                        </div>
+                        <div class="form-group col-md-4" style="margin-top: 10px; margin-bottom: 10px">
+                            <label>Gender</label>
+                            <select class="form-control" id="gender">
+                                <option>Male</option>
+                                <option>Female</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row" style="align-items: end;">
+                        <div class="form-group col-md-4" style="margin-top: 10px; margin-bottom: 10px">
+                            <label>The time of Infection</label>
+                            <select class="form-control" id="infection_time">
+                                <option>1st Wave</option>
+                                <option>2nd Wave</option>
+                                <option>Both</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-4" style="margin-top: 10px; margin-bottom: 10px">
+                            <label>Testing Date</label>
+                            <small id="testdatehelp" class="form-text text-muted">(specify positive result date only)</small>
+                            <input type="date" id="test_date" class="form-control" name="test_date">
+                            
+                        </div>
+                        <div class="form-group col-md-4" style="margin-top: 10px; margin-bottom: 10px">
+                            <label>Testing Date(optional)</label>
+                            <input type="date" id="test_date" class="form-control" name="test_date">
+                        </div>
+                    </div>
+                    <div class="form-group mt-3">
+                        <label>Please tell us about your Medical History, whether it is so small also please
+                            specify.</label>
+                        <textarea class="form-control" rows="5" placeholder="Message" required></textarea>
+                    </div>
+                    <div class="my-3">
+                        <div class="loading">Loading</div>
+                        <div class="error-message"></div>
+                        <div class="sent-message">Your message has been sent. Thank you!</div>
+                    </div>
+                  <div class="text-center"><button type="submit">Submit</button></div>
+                </form>
+              </div>
+        </div>
+      </section><!-- End Contact Section -->
+</body>
+</html>
