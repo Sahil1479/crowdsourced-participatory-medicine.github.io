@@ -1,0 +1,441 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+Home
+{% endblock %}
+
+{% block head_links %}
+{% endblock %}
+
+{% block style %}
+{% endblock %}
+
+{% block content %}
+  <!-- ======= Hero Section ======= -->
+  <section id="hero">
+    <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
+
+      <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
+
+      <div class="carousel-inner" role="listbox">
+
+        <!-- Slide 1 -->
+        <div class="carousel-item active" style="background-image: url('{% static 'img/slide/slide-1.jpg' %}')">
+          <div class="container">
+            <h2>Welcome to <span>Crowd Source Participatory Medicine Project</span></h2>
+            <p>There is no other disease that has led to such a global crisis as the COVID-19 and with its successive waves since December  2019, the situation is not likely to abate soon. The clinical patterns and responsiveness to therapies for tackling SARS-CoV2  is turning out to be distinct from its earlier relatives.  All these have considerably challenged the clinical community for effective solutions. In the history of scientific research no other subject has captured so much publication space or common man’s expectations from scientists. </p>
+            <a href="#about" class="btn-get-started scrollto">Read More</a>
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="carousel-item" style="background-image: url('{% static 'img/slide/slide-2.jpg' %}')">
+          <div class="container">
+            <h2>Purpose of this Study</h2>
+            <p>There is an enormous heterogeneity in clinical outcomes of COVID and methods are needed to aggregate phenotypes in long COVID. Since long COVID could extended for much longer periods after initial infection, it also becomes uncertain whether the patients disease states are due to precipitation of other comorbid conditions or a a natural history of COVID infection. The final aim is  to evolve a data-science driven participatory medicine framework for aggregating information from experiences of millions of patients and family members of diverse demographic regions through a data-science driven participatory medicine framework . </p>
+            <a href="#about" class="btn-get-started scrollto">Read More</a>
+          </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="carousel-item" style="background-image: url('{% static 'img/slide/slide-3.jpg' %}')">
+          <div class="container">
+            <h2>What will happen if you take part in the study</h2>
+            <p> Your part in the submission will take about 15 minutes of your time, though it is considerably low time when we get the total desired submissions for our project, it will be around 45000 minutes and well framed model will be prepared to help millions seeking advice for COVID-19. </p>
+            <a href="#about" class="btn-get-started scrollto">Read More</a>
+          </div>
+        </div>
+
+      </div>
+
+      <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
+      </a>
+
+      <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
+        <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
+      </a>
+
+    </div>
+  </section><!-- End Hero -->
+
+  <main id="main">
+
+    <!-- ======= Featured Services Section ======= -->
+    <section id="featured-services" class="featured-services">
+      <div class="container" data-aos="fade-up">
+
+        <div class="row">
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+            <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
+              <div class="icon"><i class="fas fa-heartbeat"></i></div>
+              <h4 class="title"><a href="">People participating in the survey</a></h4>
+              <p class="description">3000+ people will be participating</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+            <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
+              <div class="icon"><i class="fas fa-pills"></i></div>
+              <h4 class="title"><a href="">Why are you important for the survey?</a></h4>
+              <p class="description">15 minutes of your time can help crowdsource platform to diagnose and treat the illness caused due to the COVID-19. </p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+            <div class="icon-box" data-aos="fade-up" data-aos-delay="300">
+              <div class="icon"><i class="fas fa-thermometer"></i></div>
+              <h4 class="title"><a href="">What is Participatory Health Model</a></h4>
+              <p class="description">Participatory health model is shared decision making and it is a process by which a health care choice is made jointly by the practitioner and the patient.</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+            <div class="icon-box" data-aos="fade-up" data-aos-delay="400">
+              <div class="icon"><i class="fas fa-dna"></i></div>
+              <h4 class="title"><a href="">General things you should know about this survey</a></h4>
+              <p class="description">It is a very voluntary service that you can do to help mankind fight this deadly disease. </p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Featured Services Section -->
+
+    <!-- ======= Cta Section ======= -->
+    <section id="cta" class="cta">
+      <div class="container" data-aos="zoom-in">
+
+        <div class="text-center">
+          <p>total_experiences - {{total_experiences}}</p>
+          <p>normal_covid_experiences - {{normal_covid_experiences}}</p>
+          <p>long_covid_experiences - {{long_covid_experiences}}</p>
+          <p>quora_covid_experiences - {{quora_covid_experiences}}</p>
+          <p>reddit_covid_experiences - {{reddit_covid_experiences}}</p>
+          <p>survey_covid_experiences - {{survey_covid_experiences}}</p>
+          <h3>Believe in our cause, take the survey</h3>
+          <p> It is a research study based questionnaire and it is voluntary to participate in the questionnaire.
+ At any time you can ask to remove your submission as a part of this project.</p>
+          <a class="cta-btn scrollto" href="https://docs.google.com/forms/d/e/1FAIpQLSd6NmU9tIN8Xjg3VSs7TGoHKYVeXW-YolgJJjXtwoAjlIInuw/viewform">Take the survey</a>
+        </div>
+
+      </div>
+    </section><!-- End Cta Section -->
+
+    <!-- ======= About Us Section ======= -->
+    <section id="about" class="about">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>About Us</h2>
+          <p>It is a project by Addepalli Bharat Sai(B19BB002), Aman Prakash(B19BB005), Aniket Wani(B19EE009), Sahil Harpal(B19CSE107), Akshansh Verma (B19BB004), Tanay Anand (B20AI046) and Parth Yaduvanshi (B20CI028)
+            all of them are under-graduate student at IIT Jodhpur.
+            The Project is Mentored by Dr. Mitali Mukerji, Dr. Sumit Kalra, Dr. Lipika Dey, Dr. Dibyadyuti Roy, Dr. Dip Sankar Banerji</p>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-6" data-aos="fade-right">
+            <img src="https://imgk.timesnownews.com/story/IIT_Jodhpur.jpg?tr=w-1200,h-900" class="img-fluid" alt="">
+          </div>
+          <div class="col-lg-6 pt-4 pt-lg-0 content" data-aos="fade-left">
+            <h3>Crowdsourced Participatory Medicine</h3>
+            <p class="fst-italic">
+              It is a research study based questionnaire and it is voluntary to participate in the questionnaire.
+At any time you can ask to remove your submission as a part of this project. Perks for being part of project are: -
+            </p>
+            <ul>
+              <li><i class="bi bi-check-circle"></i> We will send a personal COVID analysis and Mental health check to first 1000 participants.</li>
+              <li><i class="bi bi-check-circle"></i> We will also reward some of the submission which really help us to build the connectivity in the project.</li>
+              <li><i class="bi bi-check-circle"></i> Certificate of Participation.</li>
+            </ul>
+            <p>
+              The final aim is  to evolve a data-science driven participatory medicine framework for aggregating information from experiences of millions of patients and family members of diverse demographic regions through a data-science driven participatory medicine framework . Towards this we need to evolve a frameworks for aggregating information whose first step is to develop a question bank for seeking comprehensive information.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End About Us Section -->
+
+    <!-- ======= Services Section ======= -->
+    <section id="services" class="services services">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>COVID Symptoms</h2>
+          <p>Although there is no common symptoms of COVID-19 infection and it has shown multiple effects on different persons. This study will help to analyze the symptoms shown by COVID19 on different individuals. Some of the common symptoms include </p>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-4 col-md-6 icon-box" data-aos="zoom-in" data-aos-delay="100">
+            <div class="icon"><i class="fas fa-heartbeat"></i></div>
+            <h4 class="title"><a href="">Fever</a></h4>
+            <p class="description">Fever is one of the most common symptoms of COVID 19.</p>
+          </div>
+          <div class="col-lg-4 col-md-6 icon-box" data-aos="zoom-in" data-aos-delay="200">
+            <div class="icon"><i class="fas fa-pills"></i></div>
+            <h4 class="title"><a href="">Dizziness</a></h4>
+            <p class="description"> Many person affected from COVID-19 complained about feeling dizziness.</p>
+          </div>
+          <div class="col-lg-4 col-md-6 icon-box" data-aos="zoom-in" data-aos-delay="300">
+            <div class="icon"><i class="fas fa-hospital-user"></i></div>
+            <h4 class="title"><a href="">Loss of taste and smell</a></h4>
+            <p class="description">People also reported loss of taste and smell while suffering from COVID-19.</p>
+          </div>
+          <div class="col-lg-4 col-md-6 icon-box" data-aos="zoom-in" data-aos-delay="100">
+            <div class="icon"><i class="fas fa-dna"></i></div>
+            <h4 class="title"><a href="">Difficulty breathing or shortness of breath</a></h4>
+            <p class="description"> In severe cases of COVID-19 infection people also faced difficulty in breathing or shortness of breathe.</p>
+          </div>
+          <div class="col-lg-4 col-md-6 icon-box" data-aos="zoom-in" data-aos-delay="200">
+            <div class="icon"><i class="fas fa-wheelchair"></i></div>
+            <h4 class="title"><a href="">Chest Pain</a></h4>
+            <p class="description">Many people reported chest pain during the infection.</p>
+          </div>
+          <div class="col-lg-4 col-md-6 icon-box" data-aos="zoom-in" data-aos-delay="300">
+            <div class="icon"><i class="fas fa-notes-medical"></i></div>
+            <h4 class="title"><a href="">Loss of appetite</a></h4>
+            <p class="description">People also faced loss of appetite due to COVID infection.</p>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Services Section -->
+
+    <!-- ======= Departments Section ======= -->
+    <section id="departments" class="departments">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Aim of this project</h2>
+          <p> The aim of the project is to understand determinants of COVID outcomes from experiences of millions of patients and family members of diverse demographic regions through a data-science driven participatory medicine framework </p>
+        </div>
+
+        <div class="row" data-aos="fade-up" data-aos-delay="100">
+          <div class="col-lg-4 mb-5 mb-lg-0">
+            <ul class="nav nav-tabs flex-column">
+              <li class="nav-item">
+                <a class="nav-link active show" data-bs-toggle="tab" data-bs-target="#tab-1">
+                  <h4>Development of data Science framework</h4>
+                  <p> A data-science framework will be developed.</p>
+                </a>
+              </li>
+              <li class="nav-item mt-2">
+                <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-2">
+                  <h4>Evaluation of intrinsic and extrinsic factors of COVID 19.</h4>
+                  <p>Some extrinsic and intrinsic factors will be evaluated.</p>
+                </a>
+              </li>
+              <li class="nav-item mt-2">
+                <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-3">
+                  <h4>Assessing the role of Peer learning and social media.</h4>
+                  <p>In this project we will try to assess the role of peer learning, social media  and behavioural patterns in patient choice and COVID outcomes
+                  </p>
+                </a>
+              </li>
+              <li class="nav-item mt-2">
+                <a class="nav-link" data-bs-toggle="tab" data-bs-target="#tab-4">
+                  <h4>Participatory vs clinical setting</h4>
+                  <p>Using this project we will assess the outcomes in participatory vs clinical settings </p>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-8">
+            <div class="tab-content">
+              <div class="tab-pane active show" id="tab-1">
+                <h3>Development of Data Science framework</h3>
+                <p class="fst-italic">A data-science framework will be developed in the project.</p>
+                <img src="https://datascienceforthepublicgood.org/sites/dspg/files/CLD3%20Only.jpg" alt="" class="img-fluid">
+                <p> Data-science framework will be used to aggregate patient notes and experiences from crowdsourced structured and non-structured data.</p>
+              </div>
+              <div class="tab-pane" id="tab-2">
+                <h3>Evaluating extrinsic and intrinsic factors</h3>
+                <p class="fst-italic">Effects of some intrinsic and extrinsic factors will be evaluated in the project.</p>
+                <img src="https://spritelypt.files.wordpress.com/2016/09/screen-shot-2016-08-31-at-9-39-39-pm.png?w=824" alt="" class="img-fluid">
+                <p>In this project we will try to evaluate the effect of intrinsic, extrinsic factors such as environmental, hygiene and social behaviour and cultural practices on outcomes</p>
+              </div>
+              <div class="tab-pane" id="tab-3">
+                <h3>Assessing the role of different medium.</h3>
+                <p class="fst-italic">We will assess the role of different medium in this project.</p>
+                <img src="https://cdn.searchenginejournal.com/wp-content/uploads/2021/08/top-5-reasons-why-you-need-a-social-media-manager-616015983b3ba-sej.png" alt="" class="img-fluid">
+                <p>In this project we will try to assess the role of peer learning, social media and behavioural patterns in patient choice and COVID outcomes</p>
+              </div>
+              <div class="tab-pane" id="tab-4">
+                <h3>Participatory vs Clinical setting</h3>
+                <p class="fst-italic">We will assess the outcomes in participatory vs clinical settings</p>
+                <img src="https://417studies.com/wp-content/uploads/2020/03/Illustration-of-objects-representing-medical-research-on-blue-background.jpg" alt="" class="img-fluid">
+                <p> The outcomes in participatory vs clinical settings will be analyzed and using the results we can inform others to take actions accordingly.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Departments Section -->
+
+    <!-- ======= Doctors Section ======= -->
+    <section id="doctors" class="doctors section-bg">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Project Team Members</h2>
+          <p> Get to know about project team members and you can also access their social media profile and contacts.</p>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+            <div class="member" data-aos="fade-up" data-aos-delay="200">
+              <div class="member-img">
+                <img src="{% static 'img/departments-2.jpg' %}" class="img-fluid" alt="">
+                <div class="social">
+                  <a href=""><i class="bi bi-twitter"></i></a>
+                  <a href="#"><i class="bi bi-facebook"></i></a>
+                  <a href="#"><i class="bi bi-instagram"></i></a>
+                  <a href="#"><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Aman Prakash</h4>
+                <span>Pre-final year Bioengineering Program</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+            <div class="member" data-aos="fade-up" data-aos-delay="300">
+              <div class="member-img">
+                <img src="{% static 'img/departments-2.jpg' %}" class="img-fluid" alt="">
+                <div class="social">
+                  <a href=""><i class="bi bi-twitter"></i></a>
+                  <a href="#"><i class="bi bi-facebook"></i></a>
+                  <a href="#"><i class="bi bi-instagram"></i></a>
+                  <a href="#"><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Addepali Bharat Sai</h4>
+                <span>Pre-final year Bioengineering Program</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+            <div class="member" data-aos="fade-up" data-aos-delay="400">
+              <div class="member-img">
+                <img src="{% static 'img/departments-2.jpg' %}" class="img-fluid" alt="">
+                <div class="social">
+                  <a href=""><i class="bi bi-twitter"></i></a>
+                  <a href="#"><i class="bi bi-facebook"></i></a>
+                  <a href="#"><i class="bi bi-instagram"></i></a>
+                  <a href="#"><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Aniket Wani</h4>
+                <span>Pre-final year Electrical Program</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+            <div class="member" data-aos="fade-up" data-aos-delay="500">
+              <div class="member-img">
+                <img src="{% static 'img/departments-2.jpg' %}" class="img-fluid" alt="">
+                <div class="social">
+                  <a href=""><i class="bi bi-twitter"></i></a>
+                  <a href="#"><i class="bi bi-facebook"></i></a>
+                  <a href="#"><i class="bi bi-instagram"></i></a>
+                  <a href="#"><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Sahil Harpal</h4>
+                <span>Pre-final year Computer Science Program</span>
+              </div>
+            </div>
+          </div>
+
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+      <div id="contact_form" class="container">
+
+        <div class="section-title">
+          <h2>Contact</h2>
+          <p>If you have any questions/queries/suggestions/complaints you can contact us.</p>
+        </div>
+
+      </div>
+
+      <div><!--
+        <iframe style="border:0; width: 100%; height: 350px;" src="" frameborder="0" allowfullscreen></iframe> -->
+      </div>
+
+      <div class="container">
+
+        <div class="row mt-5">
+
+          <div class="col-lg-6">
+
+            <div class="row">
+              <div class="col-md-12">
+                <div class="info-box">
+                  <i class="bx bx-map"></i>
+                  <h3> Address</h3>
+                  <p>I2 Hostel, IIT Jodhpur</p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="info-box mt-4">
+                  <i class="bx bx-envelope"></i>
+                  <h3>Email Us</h3>
+                  <p>info.cspm.iitj@gmail.com<br></p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="info-box mt-4">
+                  <i class="bx bx-phone-call"></i>
+                  <h3>Call Us</h3>
+                  <p>+91 7276801998<br></p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-lg-6">
+            <form  action="/query/" method="POST" role="form" class="php-email-form">
+              {% csrf_token %}
+              <div class="row" style="align-items: end;">
+                <div class="col form-group">
+                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+                </div>
+                <div class="col form-group mt-3">
+                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+                </div>
+              </div>
+              <div class="form-group mt-3">
+                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+              </div>
+              <div class="form-group mt-3">
+                <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+              </div>
+              <div class="my-3">
+              </div>
+              <div class="text-center"><button class="appointment-btn" type="submit">Send Message</button></div>
+            </form>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Contact Section -->
+
+  </main><!-- End #main -->
+
+  {% endblock %}
+</body>
+
+</html>

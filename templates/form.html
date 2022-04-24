@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+Data Collection Form
+{% endblock %}
+
+{% block head_links %}
+{% endblock %}
+
+{% block style %}
+{% endblock %}
+
+{% block content %}
+<section id="contact" class="contact">
+    <div id="contact_form" class="container">
+
+      <div class="section-title">
+        <h2>Crowdsourced Participatory Medicine Questionnaire
+        </h2>
+      </div>
+
+    </div>
+
+    <div><!--
+      <iframe style="border:0; width: 100%; height: 350px;" src="" frameborder="0" allowfullscreen></iframe> -->
+    </div>
+
+    <div class="container">
+        <div class="col-lg-12">
+            <form action="/covid_experience/" method="POST"  role="form" class="php-email-form">
+                {% csrf_token %}
+                <div class="row" style="align-items: end;">
+                    <div class="form-group col-md-6" style="margin-top: 10px; margin-bottom: 10px">
+                        <label>Email</label>
+                        <input type="email" class="form-control" name="email" id="email" placeholder="example@gmail.com">
+                    </div>
+                    <div class="form-group col-md-6" style="margin-top: 10px; margin-bottom: 10px">
+                        <label>Name</label>
+                        <input type="text" name="name" class="form-control" id="name" placeholder="Your Name">
+                    </div>
+                </div>
+                <div class="row" style="align-items: end;">
+                    <div class="form-group col-md-4" style="margin-top: 10px; margin-bottom: 10px">
+                        <label>Age</label>
+                        <input type="number" class="form-control" name="age" id="age" placeholder="Your Age">
+                    </div>
+                    <div class="form-group col-md-4" style="margin-top: 10px; margin-bottom: 10px">
+                        <label>Mobile Number</label>
+                        <input type="text" id="mobile" class="form-control" name="mobile">
+                    </div>
+                    <div class="form-group col-md-4" style="margin-top: 10px; margin-bottom: 10px">
+                        <label>Gender</label>
+                        <select class="form-control" name="gender" id="gender">
+                            <option>Male</option>
+                            <option>Female</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row" style="align-items: end;">
+                    <div class="form-group col-md-4" style="margin-top: 10px; margin-bottom: 10px">
+                        <label>The time of Infection</label>
+                        <select class="form-control" name="time_of_infection" id="time_of_infection">
+                            <option>1st Wave</option>
+                            <option>2nd Wave</option>
+                            <option>Both</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-4" style="margin-top: 10px; margin-bottom: 10px">
+                        <label>Testing Date</label>
+                        <small id="testdatehelp" class="form-text text-muted">(specify positive result date only)</small>
+                        <input type="date" id="test_date" class="form-control" name="testing_date1">
+                        
+                    </div>
+                    <div class="form-group col-md-4" style="margin-top: 10px; margin-bottom: 10px">
+                        <label>Testing Date(optional)</label>
+                        <input type="date" id="test_date" class="form-control" name="testing_date2">
+                    </div>
+                </div>
+                <div class="form-group mt-3">
+                    <label>Write your experience here</label>
+                    <textarea class="form-control" rows="5" name="experience" placeholder="" required></textarea>
+                </div>
+                <div class="my-3">
+                    
+                </div>
+              <div class="text-center"><button class="appointment-btn" type="submit">Submit</button></div>
+            </form>
+          </div>
+    </div>
+  </section><!-- End Contact Section -->
+{% endblock %}

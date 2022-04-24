@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+Covid Experiences
+{% endblock %}
+
+{% block head_links %}
+{% endblock %}
+
+{% block style %}
+{% endblock %}
+
+{% block content %}
+<section id="contact" class="contact" style="margin-top: 80px;">
+    {% for e in experiences %}
+        <div style="background: yellow;">
+            <p>
+                {{e.experience}}
+            </p>
+            <p>
+                {{e.source}}
+            </p>
+            <p>
+                {% for r in replies %}
+                    {% if r.experience == e %}
+                        <h2>{{r.text}}</h2>
+                    {% endif %}
+                {% endfor %}
+            </p>
+        </div>
+    {% endfor %}
+</section><!-- End Contact Section -->
+{% endblock %}

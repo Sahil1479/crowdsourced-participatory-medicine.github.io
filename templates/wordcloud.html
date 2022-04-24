@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+Word Cloud
+{% endblock %}
+
+{% block head_links %}
+{% endblock %}
+
+{% block style %}
+{% endblock %}
+
+{% block content %}
+<section id="contact" class="contact" style="margin-top: 80px;">
+    {% for s in symtoms %}
+        <div style="background: yellow;">
+            <p>
+                {{s.name}} - {{s.count}}
+            </p>
+        </div>
+    {% endfor %}
+</section><!-- End Contact Section -->
+{% endblock %}
