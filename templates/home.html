@@ -105,23 +105,61 @@ Home
     </section><!-- End Featured Services Section -->
 
     <!-- ======= Cta Section ======= -->
+    
     <section id="cta" class="cta">
       <div class="container" data-aos="zoom-in">
 
         <div class="text-center">
-          <p>total_experiences - {{total_experiences}}</p>
+          <!-- <p>total_experiences - {{total_experiences}}</p>
           <p>normal_covid_experiences - {{normal_covid_experiences}}</p>
           <p>long_covid_experiences - {{long_covid_experiences}}</p>
           <p>quora_covid_experiences - {{quora_covid_experiences}}</p>
           <p>reddit_covid_experiences - {{reddit_covid_experiences}}</p>
-          <p>survey_covid_experiences - {{survey_covid_experiences}}</p>
-          <h3>Believe in our cause, take the survey</h3>
+          <p>survey_covid_experiences - {{survey_covid_experiences}}</p> -->
+          <section id="counts" class="counts">
+            <div class="container" data-aos="fade-up">
+      
+              <div class="row no-gutters">
+      
+                <div class="col-lg-4 col-md-12 d-md-flex align-items-md-stretch" style="background: #138c91;">
+                  <div class="count-box">
+                    <span data-purecounter-start="0" data-purecounter-end="{{total_experiences}}" data-purecounter-duration="1" class="purecounter"></span>
+      
+                    <p><strong>Total Experiences</strong></p>
+                  </div>
+                </div>
+      
+                <div class="col-lg-4 col-md-12 d-md-flex align-items-md-stretch" style="background: #138c91;">
+                  <div class="count-box">
+                    <span data-purecounter-start="0" data-purecounter-end="{{normal_covid_experiences}}" data-purecounter-duration="1" class="purecounter"></span>
+      
+                    <p><strong>Normal Covid Experiences</strong></p>
+                  </div>
+                </div>
+      
+                <div class="col-lg-4 col-md-12 d-md-flex align-items-md-stretch" style="background: #138c91;">
+                  <div class="count-box">
+                    <span data-purecounter-start="0" data-purecounter-end="{{long_covid_experiences}}" data-purecounter-duration="1" class="purecounter"></span>
+      
+                    <p><strong>Long Covid Experiences</strong></p>
+                  </div>
+                </div>
+      
+              </div>
+      
+            </div>
+            
+          </section><!-- End Counts Section -->
+          <h3 style="margin-top: 25px;margin-bottom:15px;">Sources of data</h3>
+          <canvas id="myChart" style="width:100%;max-width:700px; display:inline; background: #9cf1f1; padding: 13px;"></canvas>
+          <h3 style="margin-top: 25px;">Believe in our cause, take the survey</h3>
           <p> It is a research study based questionnaire and it is voluntary to participate in the questionnaire.
  At any time you can ask to remove your submission as a part of this project.</p>
           <a class="cta-btn scrollto" href="https://docs.google.com/forms/d/e/1FAIpQLSd6NmU9tIN8Xjg3VSs7TGoHKYVeXW-YolgJJjXtwoAjlIInuw/viewform">Take the survey</a>
         </div>
 
       </div>
+      
     </section><!-- End Cta Section -->
 
     <!-- ======= About Us Section ======= -->
@@ -435,6 +473,73 @@ At any time you can ask to remove your submission as a part of this project. Per
 
   </main><!-- End #main -->
 
+  {% endblock %}
+
+  {% block js %}
+  <!-- <script>
+    window.onload = function () {
+    
+    var chart = new CanvasJS.Chart("chartContainer", {
+      exportEnabled: true,
+      animationEnabled: true,
+      title:{
+        text: "Sources of data"
+      },
+      legend:{
+        cursor: "pointer",
+        itemclick: explodePie
+      },
+      data: [{
+        type: "pie",
+        showInLegend: true,
+        toolTipContent: "{name}: <strong>{y}</strong>",
+        indexLabel: "{name} - {y}",
+        dataPoints: [
+          { y: "{{quora_covid_experiences}}", name: "Quora" },
+          { y: "{{reddit_covid_experiences}}", name: "Reddit" },
+          { y: "{{survey_covid_experiences}}", name: "Survey" },
+        ]
+      }]
+    });
+    chart.render();
+    }
+    
+    function explodePie (e) {
+      if(typeof (e.dataSeries.dataPoints[e.dataPointIndex].exploded) === "undefined" || !e.dataSeries.dataPoints[e.dataPointIndex].exploded) {
+        e.dataSeries.dataPoints[e.dataPointIndex].exploded = true;
+      } else {
+        e.dataSeries.dataPoints[e.dataPointIndex].exploded = false;
+      }
+      e.chart.render();
+    
+    }
+    </script>
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script> -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
+    </script>
+    <script>
+      var xValues = ["Quora", "Reddit", "Survey"];
+      var yValues = ["{{quora_covid_experiences}}", "{{reddit_covid_experiences}}", "{{survey_covid_experiences}}"];
+      var barColors = [
+        "#b91d47",
+        "#e8c3b9",
+        "#2b5797",
+      ];
+      new Chart("myChart", {
+        type: "pie",
+        data: {
+          labels: xValues,
+          datasets: [{
+            backgroundColor: barColors,
+            data: yValues
+          }]
+        },
+        options: {
+        }
+      });
+      Chart.defaults.font.size = 16;
+    </script>
   {% endblock %}
 </body>
 
