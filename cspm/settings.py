@@ -26,9 +26,9 @@ TEMPLATE_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = "q$o5mx19x9(9_^rzqf@o@s^t%t!ghix7($f9ymy49_^ryzq9x9" # config('SECRET_KEY', cast=str)
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = [] #['127.0.0.1', 'localhost', 'cspm.iitj.ac.in']
+ALLOWED_HOSTS = ['127.0.0.1',] #['127.0.0.1', 'localhost', 'cspm.iitj.ac.in']
 
 
 # Application definition
