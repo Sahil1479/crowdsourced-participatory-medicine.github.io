@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Queries, CovidExperience, QueryReply, Symtoms
+from .models import Queries, CovidExperience, QueryReply, Symptom
 
 
 @admin.register(QueryReply)
@@ -31,11 +31,11 @@ class CovidExperienceAdmin(admin.ModelAdmin):
         fields = '__all__'
 
 
-@admin.register(Symtoms)
-class SymtomsAdmin(admin.ModelAdmin):
+@admin.register(Symptom)
+class SymptomAdmin(admin.ModelAdmin):
     list_display = ['name', 'count', ]
     search_fields = ['name', ]
 
     class Meta:
-        model = Symtoms
+        model = Symptom
         fields = '__all__'

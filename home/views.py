@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 
-from .models import Queries, CovidExperience, QueryReply, Symtoms
+from .models import Queries, CovidExperience, QueryReply, Symptom
 
 def home(request):
     total_experiences = len(CovidExperience.objects.all())
@@ -54,7 +54,7 @@ def read_experience(request):
     return render(request, 'experiences.html', {'experiences': experiences, 'replies': replies})
 
 
-def symtoms_wordcloud(request):
-    symtoms = Symtoms.objects.all()
+def symptoms_wordcloud(request):
+    symptoms = Symptom.objects.all()
 
-    return render(request, 'wordcloud.html', {'symtoms': symtoms})
+    return render(request, 'wordcloud.html', {'symptoms': symptoms})

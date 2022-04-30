@@ -55,7 +55,7 @@ class QueryReply(models.Model):
         return str(self.pk)
 
 
-class Symtoms(models.Model):
+class Symptom(models.Model):
     name = models.CharField(max_length=40, blank=False, null=False, verbose_name='Name')
     count = models.IntegerField(blank=False, null=False)
 

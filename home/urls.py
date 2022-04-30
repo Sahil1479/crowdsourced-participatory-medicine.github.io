@@ -9,5 +9,5 @@ urlpatterns = [
     path('query/', views.query, name='query'),
     path('covid_experience/', views.covid_experience, name='covid_experience'),
     path('read_experience/', views.read_experience, name='read_experience'),
-    path('symtoms_wordcloud/', views.symtoms_wordcloud, name='symtoms_wordcloud'),
+    path('symptoms_wordcloud/', views.symptoms_wordcloud, name='symptoms_wordcloud'),
 ]
