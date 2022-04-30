@@ -24,8 +24,6 @@ wheels/
 .installed.cfg
 *.egg
 *.sqlite3
-**/migrations/*
-!**/migrations/__init__.py
 staticfiles/
 media/
 .idea/
