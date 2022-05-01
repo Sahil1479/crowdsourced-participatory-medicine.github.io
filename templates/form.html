@@ -30,27 +30,29 @@ Data Collection Form
         <div class="col-lg-12">
             <form action="/covid_experience/" method="POST"  role="form" class="php-email-form">
                 {% csrf_token %}
+                <p style="margin-bottom: 0px; color:red">Info of the person filling the form</p>
                 <div class="row" style="align-items: end;">
-                    <div class="form-group col-md-6" style="margin-top: 10px; margin-bottom: 10px">
+                    <div class="form-group col-md-4" style="margin-top: 10px; margin-bottom: 10px">
                         <label>Email</label>
                         <input type="email" class="form-control" name="email" id="email" placeholder="example@gmail.com">
                     </div>
-                    <div class="form-group col-md-6" style="margin-top: 10px; margin-bottom: 10px">
+                    <div class="form-group col-md-4" style="margin-top: 10px; margin-bottom: 10px">
                         <label>Name</label>
                         <input type="text" name="name" class="form-control" id="name" placeholder="Your Name">
-                    </div>
-                </div>
-                <div class="row" style="align-items: end;">
-                    <div class="form-group col-md-4" style="margin-top: 10px; margin-bottom: 10px">
-                        <label>Age</label>
-                        <input type="number" class="form-control" name="age" id="age" placeholder="Your Age">
                     </div>
                     <div class="form-group col-md-4" style="margin-top: 10px; margin-bottom: 10px">
                         <label>Mobile Number</label>
                         <input type="text" id="mobile" class="form-control" name="mobile">
                     </div>
-                    <div class="form-group col-md-4" style="margin-top: 10px; margin-bottom: 10px">
-                        <label>Gender</label>
+                </div>
+                <p style="margin-top: 20px; margin-bottom: 0px; color:red">Info of the patient</p>
+                <div class="row" style="align-items: end;">
+                    <div class="form-group col-md-6" style="margin-top: 10px; margin-bottom: 10px">
+                        <label>Age</label>
+                        <input type="number" class="form-control" name="age" id="age" placeholder="Your Age">
+                    </div>
+                    <div class="form-group col-md-6" style="margin-top: 10px; margin-bottom: 10px">
+                        <label>Gender <span style="color: red;">*</span></label>
                         <select class="form-control" name="gender" id="gender">
                             <option>Male</option>
                             <option>Female</option>
@@ -60,7 +62,7 @@ Data Collection Form
                 </div>
                 <div class="row" style="align-items: end;">
                     <div class="form-group col-md-4" style="margin-top: 10px; margin-bottom: 10px">
-                        <label>The time of Infection</label>
+                        <label>The time of Infection <span style="color: red;">*</span></label>
                         <select class="form-control" name="time_of_infection" id="time_of_infection">
                             <option>1st Wave</option>
                             <option>2nd Wave</option>
@@ -68,18 +70,18 @@ Data Collection Form
                         </select>
                     </div>
                     <div class="form-group col-md-4" style="margin-top: 10px; margin-bottom: 10px">
-                        <label>Testing Date</label>
-                        <small id="testdatehelp" class="form-text text-muted">(specify positive result date only)</small>
+                        <label>Testing Date (for 1st wave)</label>
+                        <!-- <small id="testdatehelp" class="form-text text-muted">(specify positive result date only)</small> -->
                         <input type="date" id="test_date" class="form-control" name="testing_date1">
                         
                     </div>
                     <div class="form-group col-md-4" style="margin-top: 10px; margin-bottom: 10px">
-                        <label>Testing Date(optional)</label>
+                        <label>Testing Date (for 2nd wave)</label>
                         <input type="date" id="test_date" class="form-control" name="testing_date2">
                     </div>
                 </div>
                 <div class="form-group mt-3">
-                    <label>Write your experience here</label>
+                    <label>Write experience here (max size: 5000 characters)<span style="color: red;">*</span> </label>
                     <textarea class="form-control" rows="5" name="experience" placeholder="" required></textarea>
                 </div>
                 <div class="my-3">
