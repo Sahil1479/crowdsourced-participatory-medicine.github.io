@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-
+from django.http import JsonResponse
 from .models import Queries, CovidExperience, QueryReply, Symptom
 
 def home(request):
@@ -55,6 +55,18 @@ def read_experience(request):
 
 
 def symptoms_wordcloud(request):
-    symptoms = Symptom.objects.all()
+    return render(request, 'wordcloud.html')
 
-    return render(request, 'wordcloud.html', {'symptoms': symptoms})
+
+def population_chart(request):
+    labels = []
+    data = []
+    symptoms = Symptom.objects.all()
+    for obj in symptoms:
+        labels.append(obj.name)
+        data.append(obj.count)
+
+    return JsonResponse(data={
+        'labels': labels,
+        'data': data,
+    })

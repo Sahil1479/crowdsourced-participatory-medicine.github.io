@@ -10,4 +10,5 @@ urlpatterns = [
     path('covid_experience/', views.covid_experience, name='covid_experience'),
     path('read_experience/', views.read_experience, name='read_experience'),
     path('symptoms_wordcloud/', views.symptoms_wordcloud, name='symptoms_wordcloud'),
+    path('population_chart/', views.population_chart, name='population_chart'),
 ]
