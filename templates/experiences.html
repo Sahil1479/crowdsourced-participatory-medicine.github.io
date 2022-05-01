@@ -6,29 +6,58 @@ Covid Experiences
 {% endblock %}
 
 {% block head_links %}
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous" />
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/dcc97d25c8.js" crossorigin="anonymous"></script>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,700,500' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/gh/cant89/gianni-accordion-js/dist/gianniAccordion.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" ></script>
+    <link href="{% static 'css/table.css' %}" rel="stylesheet">
 {% endblock %}
 
 {% block style %}
 {% endblock %}
 
 {% block content %}
-<section id="contact" class="contact" style="margin-top: 80px;">
+<section id="contact" class="contact" style="margin-top: 70px;">
+    <div class="type-yoga-container p-4">
+        <div class= "container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="text-center">
+                        <h1 class="type-of-yoga-heading">Covid Experiences</h1>
+                    </div>
     {% for e in experiences %}
-        <div style="background: yellow;">
-            <p>
-                {{e.experience}}
-            </p>
-            <p>
-                {{e.source}}
-            </p>
-            <p>
-                {% for r in replies %}
-                    {% if r.experience == e %}
-                        <h2>{{r.text}}</h2>
-                    {% endif %}
-                {% endfor %}
-            </p>
-        </div>
+        <div class="card-container mb-3">
+            <div class="d-flex flex-row">
+                <div class="d-flex flex-column justify-content-center p-3">
+                    <div>
+                        <h1 class="type-yoga-heading">Experience ID: {{e.pk}}</h1>
+                        <p class="type-yoga-para">{{e.experience}}</p>
+                    </div>
+                </div>
+            </div>
+        <div>
+        <section class="card" style="margin-bottom: 30px;">
+            {% for r in replies %}
+                {% if r.experience == e %}
+                    <article>
+                        <h1 data-accordion-element-trigger class="h1-acordian">Reply ID {{ r.id }}</h1>
+                        <div data-accordion-element-content class="content">
+                            <p class="p-acordian">{{r.text}}</p>
+                        </div>
+                    </article>
+                {% endif %}
+            {% endfor %}
+        </section>
     {% endfor %}
+</div>
 </section><!-- End Contact Section -->
+{% endblock %}
+{% block js %}
+<script src="{% static 'js/table.js' %}"></script>
 {% endblock %}
