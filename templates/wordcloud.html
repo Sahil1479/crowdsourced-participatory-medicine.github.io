@@ -12,13 +12,59 @@ Word Cloud
 {% endblock %}
 
 {% block content %}
-<section id="contact" class="contact" style="margin-top: 80px;">
-    {% for s in symptoms %}
-        <div style="background: yellow;">
-            <p>
-                {{s.name}} - {{s.count}}
-            </p>
-        </div>
-    {% endfor %}
-</section><!-- End Contact Section -->
+<section id="cta" class="cta" style="margin-top: 80px; background: white;">
+    <div class="container" data-aos="zoom-in">
+      <div class="text-center">
+        <h3 style="margin-top: 25px;margin-bottom:15px; color:black">Symptom's Bar Chart</h3>
+        <!-- <canvas id="myChart" style="width:100%;max-width:700px; display:inline; background: #9cf1f1; padding: 13px;"></canvas> -->
+        <canvas id="population-chart" data-url="{% url 'home:population_chart' %}" style="width:100%;max-width:900px; display:inline; padding: 13px;"></canvas>
+      </div>
+
+    </div>
+    
+</section>
+{% endblock %}
+
+{% block js %}
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+  <script>
+
+    $(function () {
+
+      var $populationChart = $("#population-chart");
+      $.ajax({
+        url: $populationChart.data("url"),
+        success: function (data) {
+
+          var ctx = $populationChart[0].getContext("2d");
+
+          new Chart(ctx, {
+            type: 'bar',
+            data: {
+              labels: data.labels,
+              datasets: [{
+                label: 'Symptom',
+                backgroundColor: 'blue',
+                data: data.data
+              }]          
+            },
+            options: {
+              responsive: true,
+              legend: {
+                position: 'top',
+              },
+              title: {
+                display: true,
+                text: ''
+              }
+            }
+          });
+
+        }
+      });
+
+    });
+
+  </script>
 {% endblock %}
